@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-accent-emerald: #10b981;
+  --color-accent-blue: #3b82f6;
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-[#05070A] text-white antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--color-glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--color-glass-border);
+    @apply shadow-2xl;
+  }
+  
+  .glow-emerald {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+  }
+
+  .text-headline {
+    @apply bg-gradient-to-br from-white to-[#94a3b8] bg-clip-text text-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #05070A;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
